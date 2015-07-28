@@ -276,26 +276,30 @@
 
 - (void)setBackgroundImage:(UIImage *)image forState:(UIControlState)state;
 {
-	switch (state) {
-		case UIControlStateNormal:
-			normalStateImage = image;
-			break;
-			
-		case UIControlStateHighlighted:
-			highlightedStateImage = image;
-			break;
-			
-		case UIControlStateDisabled:
-			disabledStateImage = image;
-			break;
-			
-		case UIControlStateSelected:
-			selectedStateImage = image;
-			break;
-			
-		default:
-			break;
-	}
+    switch (state) {
+        case UIControlStateNormal:
+            normalStateImage = image;
+            break;
+            
+        case UIControlStateHighlighted:
+            highlightedStateImage = image;
+            break;
+            
+        case UIControlStateDisabled:
+            disabledStateImage = image;
+            break;
+            
+        case UIControlStateSelected:
+            selectedStateImage = image;
+            break;
+            
+        default:
+            break;
+    }
+    
+    if (self.state == state) {
+        backgroundImageView.image = image;
+    }
 }
 
 - (UIImage *)decrementImageForState:(UIControlState)state
