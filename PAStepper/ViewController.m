@@ -23,6 +23,11 @@
     self.paStepper.minimumValue = 1;
     self.paStepper.maximumValue = 50;
     //self.paStepper.editableManually = NO;
+    
+    // found a bug when we set the value greater than the max value we setted last time, the increase button state was not updated correctly.
+    self.paStepper.value = 51;
+    self.paStepper.maximumValue = 100;
+    
 }
 
 - (void)didReceiveMemoryWarning

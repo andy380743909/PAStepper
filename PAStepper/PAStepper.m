@@ -169,7 +169,8 @@
     _minimumValue = minValue;
     _textField.placeholder = [self formatedStringForValue:_minimumValue];
     if (_value < _minimumValue) {
-        _value = _minimumValue;
+        self.value = _minimumValue;
+    }else{
         [self updateViews];
     }
 }
@@ -195,7 +196,8 @@
 	}
     _maximumValue = maxValue;
     if (_value > _maximumValue) {
-        _value = _maximumValue;
+        self.value = _maximumValue;
+    }else{
         [self updateViews];
     }
 }
